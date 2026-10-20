@@ -88,14 +88,15 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
         </button>
       </div>
 
-      {/* 2-Column Grid without card borders or black image backgrounds */}
+      {/* 2-Column Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-[24px] gap-y-[40px] w-full">
         {displayList.map((proj) => (
           <div
             key={proj.id}
-            className="flex flex-col sm:flex-row items-start p-[16px] gap-[24px] w-full xl:w-[612px] min-h-[264px]"
+            // اضافه شدن کلاس‌های group و افکت هاور شیشه‌ای و نرم
+            className="group flex flex-col sm:flex-row items-start p-[16px] gap-[24px] w-full xl:w-[612px] min-h-[264px] rounded-2xl transition-all duration-300 hover:bg-white/[0.03] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"
           >
-            {/* Left Image Container - Transparent & borderless */}
+            {/* Left Image Container */}
             <div className="w-[100px] h-[208px] shrink-0 flex items-center justify-center">
               <img
                 src={proj.imageUrl}
@@ -109,7 +110,8 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
               {/* Title & Arrow */}
               <a
                 href={proj.link}
-                className="inline-flex items-center gap-[4px] text-[#7C7585] hover:text-white transition group"
+                // استفاده از group-hover برای تغییر رنگ متن و حرکت فلش در زمان هاور روی کارت
+                className="inline-flex items-center gap-[4px] text-[#7C7585] group-hover:text-white transition"
               >
                 <span className="text-[15px] leading-[22px] font-medium">
                   {proj.title}
@@ -119,11 +121,11 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#FFFFFF"
+                  stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 >
                   <path d="M7 17L17 7" />
                   <path d="M7 7h10v10" />
