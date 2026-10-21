@@ -45,15 +45,15 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onViewAll 
           return (
             <div
               key={idx}
-              className="group flex flex-col sm:flex-row items-start sm:items-stretch gap-6 sm:gap-8 p-5 -mx-5 rounded-2xl hover:bg-white/[0.03] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all duration-300 w-[calc(100%+40px)]"
+              className="group flex flex-col sm:flex-row items-start sm:items-stretch gap-6 sm:gap-8 p-5 -mx-5 rounded-xl border border-transparent hover:border-[#9D84D2]/30 hover:bg-[#7C65AE]/10 hover:shadow-[0_0_30px_rgba(124,101,174,0.12)] transition-all duration-300 w-[calc(100%+40px)]"
             >
-              {/* ستون تصویر موکاپ (هم‌قد با کل بخش متنی) */}
+              {/* ستون تصویر موکاپ */}
               <div className="w-[125px] sm:w-[130px] shrink-0 flex items-center justify-center">
                 {projectImage ? (
                   <img
                     src={projectImage}
                     alt={title || 'Project'}
-                    className="w-full h-full max-h-[260px] object-contain object-left drop-shadow-xl"
+                    className="w-full h-full max-h-[260px] object-contain object-left drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
                   <div className="w-full h-[250px] rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-center text-[11px] text-[#7C7585]">
@@ -65,12 +65,12 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onViewAll 
               {/* ستون محتوای سمت راست */}
               <div className="flex flex-col flex-grow w-full justify-between">
                 <div>
-                  {/* ۱. تنظیم سایز عنوان پروژه (18px) */}
+                  {/* تایتل پروژه همراه با هاور بنفش */}
                   <a
                     href={(project as any).link || '#'}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[18px] font-semibold text-white transition leading-snug"
+                    className="inline-flex items-center gap-1.5 text-[18px] font-semibold text-white group-hover:text-[#9D84D2] transition leading-snug"
                   >
                     <span>{title}</span>
                     <svg
@@ -82,20 +82,20 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onViewAll 
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-white"
+                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-white group-hover:text-[#9D84D2]"
                     >
                       <path d="M7 17L17 7" />
                       <path d="M7 7h10v10" />
                     </svg>
                   </a>
 
-                  {/* ۲. تنظیم سایز توضیحات زیر عنوان (16px و فونت نازک) */}
+                  {/* توضیحات زیر عنوان */}
                   <p className="mt-2 text-[16px] leading-[24px] font-light text-[#A8A8A8]">
                     {(project as any).description}
                   </p>
                 </div>
 
-                {/* ۳. تنظیم سایز متن داخل باکس Process (14px با خوانایی و فاصله خطوط دقیق) */}
+                {/* باکس Process (ثابت و بدون تغییر رنگ با هاور) */}
                 <div className="mt-4 p-5 rounded-xl bg-[#2D214A]/60 border border-[#7C65AE]/10 flex flex-col justify-center gap-1.5 text-[14px] leading-[23px] text-[#9D84D2] w-full flex-grow">
                   <span className="font-medium text-[#9D84D2]">
                     Process:
@@ -113,8 +113,9 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onViewAll 
       {/* دکمه View Full Project Archive */}
       {onViewAll && (
         <button
+          type="button"
           onClick={onViewAll}
-          className="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-white hover:text-[#9D84D2] transition mt-4"
+          className="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-white hover:text-[#9D84D2] transition mt-4 cursor-pointer"
         >
           <span>View Full Project Archive</span>
           <svg

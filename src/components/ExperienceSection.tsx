@@ -14,7 +14,8 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience
         {experiences.map((exp, idx) => (
           <div
             key={idx}
-            className="group flex flex-col sm:flex-row items-start gap-4 sm:gap-8 p-4 -mx-4 rounded-xl hover:bg-white/[0.03] transition"
+            // اضافه شدن کلاس‌های border و hover برای افکت بنفش شبیه به بخش پروژه‌ها
+            className="group flex flex-col sm:flex-row items-start gap-4 sm:gap-8 p-4 -mx-4 rounded-xl border border-transparent hover:border-[#9D84D2]/30 hover:bg-[#7C65AE]/10 hover:shadow-[0_0_30px_rgba(124,101,174,0.12)] transition-all duration-300"
           >
             {/* Period */}
             <span className="text-[13px] font-medium text-[#7C7585] uppercase tracking-wider w-[130px] shrink-0 pt-1">
@@ -25,6 +26,9 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience
             <div className="flex flex-col gap-3 flex-grow">
               <a
                 href={exp.link}
+                target="_blank"
+                rel="noreferrer"
+                // تغییر رنگ تایتل و آیکون به بنفش هنگام هاور
                 className="inline-flex items-center gap-1.5 text-[16px] font-semibold text-white group-hover:text-[#9D84D2] transition"
               >
                 <span>{exp.role} · {exp.company}</span>
@@ -37,7 +41,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-white group-hover:text-[#9D84D2]"
                 >
                   <path d="M7 17L17 7" />
                   <path d="M7 7h10v10" />

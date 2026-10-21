@@ -93,15 +93,15 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
         {displayList.map((proj) => (
           <div
             key={proj.id}
-            // اضافه شدن کلاس‌های group و افکت هاور شیشه‌ای و نرم
-            className="group flex flex-col sm:flex-row items-start p-[16px] gap-[24px] w-full xl:w-[612px] min-h-[264px] rounded-2xl transition-all duration-300 hover:bg-white/[0.03] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+            // اضافه شدن کلاس‌های بردر و سایه بنفش ملایم در زمان هاور
+            className="group flex flex-col sm:flex-row items-start p-[16px] gap-[24px] w-full xl:w-[612px] min-h-[264px] rounded-2xl border border-transparent hover:border-[#9D84D2]/30 transition-all duration-300 hover:bg-white/[0.03] hover:shadow-[0_0_30px_rgba(124,101,174,0.12)]"
           >
             {/* Left Image Container */}
             <div className="w-[100px] h-[208px] shrink-0 flex items-center justify-center">
               <img
                 src={proj.imageUrl}
                 alt={proj.title}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
@@ -110,8 +110,10 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
               {/* Title & Arrow */}
               <a
                 href={proj.link}
-                // استفاده از group-hover برای تغییر رنگ متن و حرکت فلش در زمان هاور روی کارت
-                className="inline-flex items-center gap-[4px] text-[#7C7585] group-hover:text-white transition"
+                target="_blank"
+                rel="noreferrer"
+                // تغییر رنگ تایتل در حالت هاور به بنفش (#9D84D2)
+                className="inline-flex items-center gap-[4px] text-[#7C7585] group-hover:text-[#9D84D2] transition"
               >
                 <span className="text-[15px] leading-[22px] font-medium">
                   {proj.title}
@@ -125,7 +127,7 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#7C7585] group-hover:text-[#9D84D2]"
                 >
                   <path d="M7 17L17 7" />
                   <path d="M7 7h10v10" />
@@ -137,7 +139,7 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ projects, onBackHome }
                 {proj.description}
               </p>
 
-              {/* Process Box */}
+              {/* Process Box (رنگ ثابت و بدون تغییر با هاور) */}
               <div className="flex justify-center items-center p-[12px] w-full min-h-[144px] bg-[#7C65AE]/20 rounded-[8px]">
                 <p className="text-[14px] leading-[24px] font-semibold tracking-[-0.04em] text-[#7C65AE]">
                   {proj.processText}
