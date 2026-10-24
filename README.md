@@ -12,13 +12,11 @@ A modern, responsive, and beautifully designed personal portfolio website built 
 - **Fully Responsive:** Optimized for all devices (Mobile, Tablet, Desktop).
 - **Fast Performance:** Built with modern web technologies for optimal speed.
 - **Dynamic Content:** Easily maintainable project and skill sections.
-- **Dark/Light Mode:** (اگر این ویژگی را دارید اضافه کنید)
 
 ## 🛠️ Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org/) / [React](https://reactjs.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/) (در صورت استفاده)
 - **Deployment:** Vercel / Netlify
 
 ## 🚀 Getting Started
